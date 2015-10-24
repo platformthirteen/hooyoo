@@ -1,0 +1,34 @@
+<template name="Menu">
+  <nav class="menu">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">HooYoo?</a>
+      <a href="#" data-activates="mobile-nav" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        {{> _menuItems}}
+      </ul>
+      <ul class="side-nav" id="mobile-nav">
+        {{> _menuProfileLink image="http://lorempixel.com/150/150/people" }}
+        {{> _menuItems }}
+      </ul>
+    </div>
+  </nav>
+</template>
+
+<template name="_menuItems">
+  <li><a href="#">Discovery Preferences</a></li>
+  <li><a href="#">Filter Questions</a></li>
+  <li><a href="#">Settings</a></li>
+  <li><a href="#">Logout</a></li>
+</template>
+
+<template name="_menuProfileLink">
+  <div class="cover blur" style="background: url({{ image }}); background-size: cover">
+  </div>
+
+  <div class="badge valign-wrapper">
+    <img class="avatar round" src="{{ image }}" alt="">
+    <span id="name" class="truncate">Lorem Ipsum</span>
+  </div>
+</template>

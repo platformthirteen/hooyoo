@@ -1,5 +1,50 @@
 <template name="Home">
   <div class="home">
-    <h1>Find me in app/client/templates/home/home</h1>
+    {{> Deck images=people }}
+    {{> deckControls }}
+    {{> afterLikeModal }}
+  </div>
+</template>
+
+<template name="Deck">
+  <div id="tinderslide">
+    <ul>
+      {{#each images }}
+        {{> Card }}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="Card">
+  <li class="deckCard" style="background: url({{ this }}); background-size: cover;">
+    <div class="img"></div>
+    <div class="caption">Miami Beach, 24</div>
+    <div class="like"></div>
+    <div class="dislike"></div>
+  </li>
+</template>
+
+<template name="deckControls">
+  <div class="deck-controls row valign-wrapper">
+    <div class="col s6">
+      <i class="material-icons dislike" data-action="dislike">thumb_down</i>
+    </div>
+
+    <div class="col s6">
+      <i class="material-icons like" data-action="like">thumb_up</i>
+    </div>
+  </div>
+</template>
+
+<template name="afterLikeModal">
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
   </div>
 </template>

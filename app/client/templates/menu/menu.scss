@@ -1,0 +1,34 @@
+/*****************************************************************************/
+/* Menu: Style */
+/*****************************************************************************/
+$profileBadgeHeight: 150px;
+$avatarSize: 85px;
+$avatarBorderColor: white;
+
+.menu {
+  .cover {
+    height: $profileBadgeHeight;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.8;
+  }
+
+  .badge {
+    height: $profileBadgeHeight;
+    padding: 0.5rem 1rem;
+
+    img.avatar {
+      height: $avatarSize;
+      width: $avatarSize;
+      border: 2px $avatarBorderColor solid;
+    }
+
+    span#name {
+      padding-left: 15px;
+      text-shadow: 1px 1px #666;
+      line-height: 1;
+    }
+  }
+}

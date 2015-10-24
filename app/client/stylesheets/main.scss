@@ -1,5 +1,33 @@
 /*****************************************************************************/
 /* main: Style */
 /*****************************************************************************/
-.main {
+
+$primary-color: #2680E6;
+$blur: 5px;
+@import "{poetic:materialize-scss}/bower_components/materialize/sass/materialize.scss";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+   font-family: 'Abel', sans-serif;
+ }
+
+ main {
+   flex: 1 0 auto;
+ }
+
+.blur {
+  filter: blur($blur);
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  -o-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter: url(#blur);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
+}
+
+.round {
+  border-radius: 50%;
 }
