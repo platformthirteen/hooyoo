@@ -1,19 +1,35 @@
 <template name="Menu">
   <nav class="menu">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">HooYoo?</a>
-      <a href="#" data-activates="mobile-nav" class="button-collapse">
-        <i class="material-icons">menu</i>
-      </a>
+      {{> _menuButtons home=isHomePath}}
+
       <ul class="right hide-on-med-and-down">
         {{> _menuItems}}
       </ul>
+
       <ul class="side-nav" id="mobile-nav">
         {{> _menuProfileLink image="http://lorempixel.com/150/150/people" }}
         {{> _menuItems }}
       </ul>
     </div>
   </nav>
+</template>
+
+<template name="_menuButtons">
+  <!-- We need these to always render, otherwise JS breaks -->
+  <a href="#!" class="brand-logo {{#unless home }}hidden{{/unless}}">{{../title}}</a>
+  <a href="#" data-activates="mobile-nav" class="button-collapse {{#unless home }}hidden{{/unless}}">
+    <i class="material-icons">menu</i>
+  </a>
+
+  <h1 class="brand-logo nav-title {{#if home }}hidden{{/if}}">{{../title}}</h1>
+  <a href="{{ pathFor 'home' }}" class="back-btn waves-effect {{#if home }}hidden{{/if}}">
+    <i class="material-icons">arrow_back</i>
+  </a>
+
+  <a href="{{ pathFor route='profile.edit' }}" class="edit-profile waves-effect {{#unless equal ../page 'profile' }}hidden{{/unless}}">
+    <i class="material-icons">mode_edit</i>
+  </a>
 </template>
 
 <template name="_menuItems">
@@ -28,7 +44,9 @@
   </div>
 
   <div class="badge valign-wrapper">
-    <img class="avatar round" src="{{ image }}" alt="">
+    <a href="{{ pathFor 'profile' }}" class="naked">
+      <img class="avatar round" src="{{ image }}" alt="">
+    </a>
     <span id="name" class="truncate">Lorem Ipsum</span>
   </div>
 </template>
