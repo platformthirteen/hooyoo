@@ -18,7 +18,7 @@ Package.onUse(function (api) {
     'fourseven:scss@3.3.3_3',
     'poetic:materialize-scss@1.3.5',
     'accounts-facebook@1.0.6',
-    'useraccounts:bootstrap@1.12.4'
+    'useraccounts:materialize@1.12.4'
   ];
 
   api.use(packages);
