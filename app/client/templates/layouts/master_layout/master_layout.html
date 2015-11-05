@@ -1,3 +1,8 @@
 <template name="MasterLayout">
-  {{> yield}}
+  <div class="navbar-fixed">
+    {{> Menu title=title page=page }}
+  </div>
+  <main>
+    {{> yield }}
+  </main>
 </template>
