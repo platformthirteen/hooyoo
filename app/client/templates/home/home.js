@@ -25,15 +25,6 @@ Template.Home.onCreated(function () {
 });
 
 Template.Home.onRendered(function () {
-  // FIXME should be able to do all in CSS.
-  var cardSize;
-  if ($(window).width() < $(window).height()) {
-    cardSize = $(".deckCard").outerWidth();
-  } else {
-    cardSize = $(window).height() / 1.5;
-  }
-  $(".deckCard").css("height", cardSize);
-
   // initializing jTinder.
   $("#tinderslide").jTinder({
     onDislike: function (item) {

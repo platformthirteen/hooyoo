@@ -15,7 +15,7 @@ Package.onUse(function (api) {
     'aldeed:simple-schema@1.3.3',
     'iron:router@1.0.12',
     'zimme:active-route@2.3.2',
-    'fourseven:scss@3.3.3_3',
+    'fourseven:scss@3.4.1',
     'poetic:materialize-scss@1.3.5',
     'accounts-facebook@1.0.6',
     'useraccounts:materialize@1.12.4'

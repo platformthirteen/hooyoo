@@ -36,17 +36,9 @@
   <li><a href="#">Discovery Preferences</a></li>
   <li><a href="#">Filter Questions</a></li>
   <li><a href="#">Settings</a></li>
-  <li><a href="#">Logout</a></li>
+  <li><a href="{{ pathFor 'logout' }}">Logout</a></li>
 </template>
 
 <template name="_menuProfileLink">
-  <div class="cover blur" style="background: url({{ image }}); background-size: cover">
-  </div>
-
-  <div class="badge valign-wrapper">
-    <a href="{{ pathFor 'profile' }}" class="naked">
-      <img class="avatar round" src="{{ image }}" alt="">
-    </a>
-    <span id="name" class="truncate">Lorem Ipsum</span>
-  </div>
+  {{> CoverBadge image=image }}
 </template>

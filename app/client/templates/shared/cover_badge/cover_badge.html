@@ -1,0 +1,13 @@
+<template name="CoverBadge">
+  <div class="cover-badge">
+    <div class="cover blur" style="background: url({{ image }}); background-size: cover">
+    </div>
+
+    <div class="badge valign-wrapper">
+      <a href="{{ pathFor 'profile' }}" class="naked">
+        <img class="avatar round" src="{{ image }}" alt="">
+      </a>
+      <span id="name" class="truncate">Lorem Ipsum</span>
+    </div>
+  </div>
+</template>
