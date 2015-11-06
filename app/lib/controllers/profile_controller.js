@@ -1,4 +1,4 @@
-ProfileController = RouteController.extend({
+ProfileController = ApplicationController.extend({
   subscriptions: function() {
   },
 
