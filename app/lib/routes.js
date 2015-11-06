@@ -24,3 +24,18 @@ Router.route('/profile/edit', {
   where: 'client',
   action: 'edit'
 });
+
+
+Router.route('/login', {
+  name: 'login',
+  layoutTemplate: 'BlankLayout',
+  controller: 'LoginController',
+  where: 'client'
+});
+
+Router.route('/logout', {
+  name: 'logout',
+  layoutTemplate: 'BlankLayout',
+  controller: 'LoginController',
+  action: 'logout'
+});

@@ -1,4 +1,4 @@
-ProfileController = ApplicationController.extend({
+LoginController = RouteController.extend({
   subscriptions: function() {
   },
 
@@ -6,7 +6,7 @@ ProfileController = ApplicationController.extend({
   },
 
   data: function () {
-    return {title: "Profile", page: 'profile'};
+    return {page: 'login'}
   },
 
   onRun: function () {
@@ -18,21 +18,21 @@ ProfileController = ApplicationController.extend({
   },
 
   onBeforeAction: function () {
+    if (Meteor.userId()) {
+      Router.go("home");
+    }
     this.next();
   },
 
-  //**********
-  // ACTIONS *
-  // *********
-  show: function () {
-    this.render("Profile");
+  action: function () {
+    this.render();
   },
 
-  edit: function () {
-    this.render("editProfile");
+  logout: function() {
+    Meteor.logout(function() {
+      Router.go('login');
+    });
   },
-
-
 
   onAfterAction: function () {
   },
