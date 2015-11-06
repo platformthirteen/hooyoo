@@ -17,9 +17,20 @@
 </template>
 
 <template name="Card">
-  <li class="deckCard" style="background: url({{ this }}); background-size: cover;">
-    <div class="img"></div>
-    <div class="caption">Miami Beach, 24</div>
+  <li>
+    <div class="deckCard">
+      {{> CoverBadge image=this }}
+      <div class="info">
+        <h4>John Doe, 34</h4>
+        <p>Software Engineer</p>
+        <p>Indeed.com</p>
+
+        <span>hobbies</span>
+        <span>golf</span>
+        <span>hiking</span>
+
+      </div>
+    </div>
     <div class="like"></div>
     <div class="dislike"></div>
   </li>

@@ -3,17 +3,69 @@
 /*****************************************************************************/
 .home {
   padding: 20px;
+  height: calc(100vh - 56px); // TODO: fix me
+  overflow: hidden;
 
   * {
     box-sizing: border-box;
   }
 
+  .deckCard {
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+
+    .cover-badge {
+      overflow: hidden;
+
+      .cover {
+        height: 160px;
+        margin: -5px -10px -10px -5px;
+      }
+
+      .badge {
+        text-align: center;
+        $avatarSize: 120px;
+        .avatar {
+          width: $avatarSize;
+          height: $avatarSize;
+        }
+        a {
+          height: $avatarSize;
+          width: $avatarSize;
+          line-height: $avatarSize;
+          margin: 0 auto;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .info {
+      padding: 20px;
+      span {
+        border: 1px solid #ccc;
+        padding: 1px 3px;
+        border-radius: 3px;
+      }
+    }
+  }
+
   #tinderslide {
-    width: 100%;
-    height: auto;
-    .caption {
-      color: white;
-      text-shadow: 1px 1px #999;
+    position: relative;
+    ul {
+      li {
+        position: absolute;
+        background-color: white;
+        width: 100%;
+
+        -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+        -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+        -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+        -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+        transform: translate3d(0%,0,0) scale3d(1,1,1);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
     }
   }
 

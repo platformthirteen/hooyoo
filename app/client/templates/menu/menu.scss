@@ -1,16 +1,12 @@
 /*****************************************************************************/
 /* Menu: Style */
 /*****************************************************************************/
-$profileBadgeHeight: 150px;
-$avatarSize: 85px;
-$avatarBorderColor: white;
-
 @import "{poetic:materialize-scss}/bower_components/materialize/sass/components/_color.scss";
 @import "{poetic:materialize-scss}/bower_components/materialize/sass/components/_variables.scss";
 
 nav.menu {
   padding: 0 10px;
-  
+
   i {
     line-height: 1.4;
     height: $navbar-height-mobile;
@@ -25,37 +21,5 @@ nav.menu {
   a.edit-profile {
     float: right;
     opacity: 0.6;
-  }
-
-  .cover {
-    height: $profileBadgeHeight;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    opacity: 0.8;
-  }
-
-  .badge {
-    height: $profileBadgeHeight;
-    padding: 0.5rem 1rem;
-
-    a.naked {
-      padding: 0 !important;
-      height: $avatarSize;
-      line-height: $avatarSize;
-    }
-
-    img.avatar {
-      height: $avatarSize;
-      width: $avatarSize;
-      border: 2px $avatarBorderColor solid;
-    }
-
-    span#name {
-      padding-left: 15px;
-      text-shadow: 1px 1px #666;
-      line-height: 1;
-    }
   }
 }
